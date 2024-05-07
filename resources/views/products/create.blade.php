@@ -10,9 +10,17 @@
 
 <div class="container create-product mt-5 pt-5">
   <div class="card p-4 shadow bg-light">
-    <h1>Store a product 📦</h1>
+
+    <div class="back-button">
+        <div class="d-flex float-end">
+            <a href="{{ route('products.index') }}" class="btn btn-outline-dark">Back</a>
+        </div>
+    </div>
+
+    <h1>Store a product 📥</h1>
     <hr>
-    <form action="{{ route('products.store')}}" method="post">
+
+    <form enctype="multipart/form-data" action="{{ route('products.store')}}" method="post">
       @csrf
       <div class="card-body">
         <div class="mb-3">
@@ -40,6 +48,7 @@
         <button class="btn btn-primary h5">Submit</button>
       </div>
     </form>
+
   </div>
 </div>
 
